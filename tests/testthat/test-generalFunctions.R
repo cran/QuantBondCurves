@@ -216,19 +216,6 @@ test_that("If dates input is given and in a wrong format, an error has to emerge
                          coupon.rate = 0.04), "formats failed to parse")
 })
 
-test_that("If asset is TES, then coupon rate has to be a unique number", {
-  expect_error(coupons(coupon.rate = c(0.04, 0.05),
-                       maturity = "2025-01-05" ,
-                       asset.type = "TES"), "unique fixed rate")
-})
-
-test_that("If asset is FixedIncome, then coupon rate has to be a unique number", {
-  expect_error(coupons(coupon.rate = c(0.04, 0.05),
-                       maturity = "2025-01-05" ,
-                       asset.type = "FixedIncome",
-                       freq = 2), "unique fixed rate")
-})
-
 test_that("If coupon.rate is not a unique number or doesn't has the same length as coupon dates,
           a warning message has to emerge", {
             expect_error(coupons(coupon.rate = c(0.04, 0.05),
@@ -259,7 +246,7 @@ test_that("Output is equal when using a unique coupon.rate or the same coupon ra
 })
 
 test_that("Introducing the input of coupon dates also works fine", {
-  dates <- coupon.dates(maturity = "2025-01-05")
+  dates <- coupon.dates(maturity = "2025-01-05", analysis.date = "2023-01-05")
   expect_length(coupons(coupon.rate = 0.04,
                         maturity = "2024-01-05" ,
                         analysis.date = "2023-01-03",

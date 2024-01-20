@@ -1,7 +1,7 @@
 Package: QuantBondCurves
 Type: Package
 Title: Calculates Bond Values and Interest Rate Curves for Finance
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Camilo", "Díaz", email = "camilo.diaz@quantil.com.co", role = c("aut", "cre", "com")),
     person("Andrés", "Galeano", email = "andres.galeano@quantil.com.co", role = "aut"), 
@@ -26,10 +26,10 @@ Suggests: testthat (>= 3.0.0), knitr, rmarkdown, ggplot2
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-07-11 18:55:16 UTC; kmo
+Packaged: 2024-01-20 00:01:11 UTC; kmo
 Author: Camilo Díaz [aut, cre, com],
   Andrés Galeano [aut],
   Julián Rojas [aut],
   Quantil S.A.S [aut, cph]
 Repository: CRAN
-Date/Publication: 2023-07-13 13:20:02 UTC
+Date/Publication: 2024-01-20 00:10:02 UTC
