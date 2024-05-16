@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -60,7 +60,7 @@ average.life(input = c("rate"), price = c(0.043,0.05), maturity = "2023-01-03",
              analysis.date = "2021-01-03", coupon.rate = 0.04, principal = 1,
              asset.type = "FixedIncome", freq = 1, rate.type = 0)
 
-## ---- results='hide', message=FALSE-------------------------------------------
+## ----results='hide', message=FALSE--------------------------------------------
 # The `yield.curve` input is created for the IRR's of the market assets.
 yield.curve <- c(0.1233,0.1280,0.131,0.1315,0.132,0.1322,0.1325,0.1323,0.1321,0.132)
 # The output terms desired are established.
@@ -94,7 +94,7 @@ curve.calibration(yield.curve = yield.curve, market.assets = market.assets,
                   analysis.date = "2019-01-03" , asset.type = "TES", freq = 1,
                   daycount = "ACT/365", fwd = 1, nodes = nodes, approximation = "constant")
 
-## ---- echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide',fig.align='center', warning=FALSE----
+## ----echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide',fig.align='center', warning=FALSE----
 
 yield.curve <- c(0.103,0.1034,0.1092, 0.1161, 0.1233, 0.1280, 0.1310, 0.1320, 0.1325, 0.1320)
 names(yield.curve) <- c(0,0.08,0.25,0.5,1,2,3,5,7,10)
@@ -128,7 +128,7 @@ ggplot(df, aes(x)) +
     legend.box.background = element_rect(color = "black", size = 1.2)
   )
 
-## ---- results='hide'----------------------------------------------------------
+## ----results='hide'-----------------------------------------------------------
 yield.curve <- c(0.103,0.1034,0.1092, 0.1161, 0.1233, 0.1280, 0.1310, 0.1320, 0.1325, 0.1320)
 names(yield.curve) <- c(0,0.08,0.25,0.5,1,2,3,5,7,10)
 nodes <- seq(0,10, by = 0.001)
@@ -138,7 +138,7 @@ curve.calibration (yield.curve = yield.curve, market.assets = NULL,
                    freq = 4, npieces = 2, fwd = 0, obj = "Rates",
                    piece.term = 3, nodes = nodes, approximation = "linear")
 
-## ---- echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide',fig.align='center', warning=FALSE----
+## ----echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide',fig.align='center', warning=FALSE----
 yield.curve <- c(0.103,0.1034,0.1092, 0.1161, 0.1233, 0.1280, 0.1310, 0.1320, 0.1325, 0.1320)
 names(yield.curve) <- c(0,0.08,0.25,0.5,1,2,3,5,7,10)
 nodes <- seq(0,10, by = 0.001)
@@ -234,7 +234,7 @@ curve.calculation(serie = serie, market.assets = market.assets, noSpots = 1,
                   freq = 1, rate.type = 1, fwd = 0,
                   nodes = c(0, 0.25, 0.5, 1:5), approximation = "linear")
 
-## ---- results = 'hide'--------------------------------------------------------
+## ----results = 'hide'---------------------------------------------------------
 # Inputs for calibration of spot curve
 yield.curve <- c(0.015,0.0175, 0.0225, 0.0275, 0.0325, 0.0375,0.04,0.0425,0.045,0.0475,0.05)
 names(yield.curve) <- c(0.5,1,2,3,4,5,6,7,8,9,10)
@@ -248,7 +248,7 @@ spot <- curve.calibration (yield.curve = yield.curve, market.assets = NULL,
 dates <- names(spot)
 spot2forward(dates, spot, approximation = "linear")
 
-## ---- echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center',warning=FALSE----
+## ----echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center',warning=FALSE----
 yield.curve <- c(0.015,0.0175, 0.0225, 0.0275, 0.0325, 0.0375,0.04,0.0425,0.045,0.0475,0.05)
 names(yield.curve) <- c(0.5,1,2,3,4,5,6,7,8,9,10)
 nodes <- seq(0,10,0.001)
@@ -283,7 +283,7 @@ ggplot(df, aes(x)) +
     legend.box.background = element_rect(color = "black", size = 1.2)
   )
 
-## ---- results = 'hide'--------------------------------------------------------
+## ----results = 'hide'---------------------------------------------------------
 # Inputs for calibration of forward curve
 yield.curve <- c(0.015,0.0175, 0.0225, 0.0275, 0.0325, 0.0375,0.04,0.0425,0.045,0.0475,0.05)
 names(yield.curve) <- c(0.5,1,2,3,4,5,6,7,8,9,10)
@@ -298,7 +298,7 @@ fwd <- curve.calibration (yield.curve = yield.curve, market.assets = NULL,
 dates <- names(fwd)
 fwd2spot(dates, fwd, approximation = "linear")
 
-## ---- echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center',warning=FALSE----
+## ----echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center',warning=FALSE----
 yield.curve <- c(0.015,0.0175, 0.0225, 0.0275, 0.0325, 0.0375,0.04,0.0425,0.045,0.0475,0.05)
 names(yield.curve) <- c(0.5,1,2,3,4,5,6,7,8,9,10)
 nodes <- seq(0,10,0.001)
@@ -343,7 +343,7 @@ swaps <- rbind(c("2024-03-01", "FF", 0.07 , 0.0325, NA   , NA    , 2000 * ex.rat
                c("2029-03-01", "VV", NA   , NA    , 0.01 , 0.0125, 3000000, 3000000 / ex.rate))
 colnames(swaps) <- c("Mat"  ,"Legs", "C1" , "C2", "spread1", "spread2", "prin1", "prin2")
 
-## ---- results='hide'----------------------------------------------------------
+## ----results='hide'-----------------------------------------------------------
 # Inputs for calibration of spot curve
 yield.curve <- c(0.015,0.0175, 0.0225, 0.0275, 0.0325, 0.0375,0.04,0.0425,0.045,0.0475,0.05)
 names(yield.curve) <- c(0.5,1,2,3,4,5,6,7,8,9,10)
@@ -360,7 +360,7 @@ basis.curve(swaps = swaps, ex.rate = 4814, analysis.date = "2023-03-01",
             rate.type = 1, npieces = 4, obj = "Price", Weights = NULL, 
             nsimul = 10, nodes = nodes, approximation = "linear")
 
-## ---- echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center', warning = FALSE----
+## ----echo = FALSE, message=FALSE , fig.width = 7.2, fig.height = 5, results = 'hide', fig.align='center', warning = FALSE----
 ex.rate <- 4814
 swaps <- rbind(c("2024-03-01", "VV", NA   , NA , 0.015  , 0.015    , 2000 * ex.rate, 2000),
                c("2025-03-01", "VV", NA   , NA , 0.0175 , 0.0175, 2000 * ex.rate, 2000),
@@ -417,7 +417,7 @@ valuation.swaps(maturity = "2026-07-01", analysis.date = "2023-02-01",
                 asset.type = "IBRSwaps", freq = 4, coupon.rate = 0.04,
                 rates = rep(0.04,14), float.rate = 0.042)
 
-## ---- results = 'hide'--------------------------------------------------------
+## ----results = 'hide'---------------------------------------------------------
 # Curve Calibration for `rates` input
  yield.curve <- c(0.103,0.1034,0.1092, 0.1161, 0.1233, 0.1280, 0.1310, 0.1320, 0.1325)
  names(yield.curve) <- c(0,0.08,0.25,0.5,1,2,3,5,6)
@@ -428,7 +428,7 @@ valuation.swaps(maturity = "2026-07-01", analysis.date = "2023-02-01",
                              npieces = NULL, obj = "Rates", nsimul = nsimul, 
                              nodes = nodes,  approximation = "constant")
 
-## ---- results='hide'----------------------------------------------------------
+## ----results='hide'-----------------------------------------------------------
 # Curve Calibration for `basis.rates` input
 nodes  <- seq(0, 10, by = 0.001)
 rates2 <- rates/4 # It is assumed foreign curve is proportional to local spot curve.
