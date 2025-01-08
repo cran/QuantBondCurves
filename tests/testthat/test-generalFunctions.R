@@ -326,7 +326,7 @@ test_that("if rates are constant, discount factor has to be each time smaller", 
 
 
 test_that("Discount factors have to be lower when using continously compounded interest rates", {
-  dates <- coupon.dates(maturity = "2025-01-05")
+  dates <- coupon.dates(maturity = "2025-01-05", analysis.date = "2023-01-05")
   for (i in 1:(length(dates$dates))) {
     expect_lte(discount.factors(rates = c(0.01,0.04),
                                 analysis.date = "2023-01-03",
