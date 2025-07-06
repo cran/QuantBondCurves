@@ -1,4 +1,4 @@
-6a9ed725687f0e1cd51e19899196207f *DESCRIPTION
+6a5cb04430752fe80182723626285ea7 *DESCRIPTION
 33cae8660fdb076c76c34d8af5436482 *NAMESPACE
 513b140279c1b5300f5823b3a639c3ee *NEWS.md
 929af9d60fa1d660f613d8705900a085 *R/CurveCalibration.R
@@ -33,5 +33,5 @@ d0f95f40aac94264b6e7566ba7047436 *man/valuation.swaps.Rd
 81b90eae02992f671464eafbf465b595 *tests/testthat/test-CurveCalibration.R
 f1d0d8c0f0187ccbc2e501298b87a40d *tests/testthat/test-bondValuation.R
 3a1af992d988ff9945f3176fabad74cf *tests/testthat/test-curvefunctions.R
-85ac1bdac982ded937119d5e71a138e6 *tests/testthat/test-generalFunctions.R
+23c50a29e0fc8cfadc6840ecb38c48df *tests/testthat/test-generalFunctions.R
 bc2726ceb7cf861cb50c803836eab886 *vignettes/quantcurves.Rmd

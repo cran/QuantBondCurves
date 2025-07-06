@@ -219,7 +219,8 @@ test_that("If dates input is given and in a wrong format, an error has to emerge
 test_that("If coupon.rate is not a unique number or doesn't has the same length as coupon dates,
           a warning message has to emerge", {
             expect_error(coupons(coupon.rate = c(0.04, 0.05),
-                                 maturity = "2026-01-05" ,
+                                 maturity = "2026-01-05",
+                                 analysis.date = "2023-01-05",
                                  asset.type = "LIBOR",
                                  freq = 4), "length of dates")
           })
